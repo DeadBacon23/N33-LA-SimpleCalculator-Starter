@@ -26,19 +26,19 @@ namespace SimpleCalculator
 
                 if (operation == "+")
                 {
-                    Console.WriteLine(String.Format("The value {0} plus the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                    Console.WriteLine(String.Format("The value {0:##} plus the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
                 }
                 else if (operation == "-")
                 {
-                    Console.WriteLine(String.Format("The value {0} minus the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                    Console.WriteLine(String.Format("The value {0:##} minus the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
                 }
                 else if (operation == "*")
                 {
-                    Console.WriteLine(String.Format("The value {0} multiplied by the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                    Console.WriteLine(String.Format("The value {0:##} multiplied by the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
                 }
                 else if (operation == "/")
                 {
-                    Console.WriteLine(String.Format("The value {0} devide by the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                    Console.WriteLine(String.Format("The value {0:##} devide by the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
                 }  
             }
             catch (Exception ex) {
