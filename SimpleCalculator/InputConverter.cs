@@ -6,6 +6,7 @@ namespace SimpleCalculator
     {
         public static double ConvertInputToNumeric(string argTextInput)
         {
+            // use tryparse
             return 0;
         }
     }
