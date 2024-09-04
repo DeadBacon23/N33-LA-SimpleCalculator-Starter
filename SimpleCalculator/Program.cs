@@ -22,6 +22,8 @@ namespace SimpleCalculator
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
+
+
                 if (operation == "+")
                 {
                     Console.WriteLine(String.Format("The value {0} plus the value {0} is equal to {0}", firstNumber, secondNumber, result));
@@ -32,10 +34,17 @@ namespace SimpleCalculator
                 }
                 else if (operation == "*")
                 {
-                    // Normally, we'd log this error to a file.
-                    Console.WriteLine(ex.Message);   
+                    Console.WriteLine(String.Format("The value {0} multiplied by the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                }
+                else if (operation == "/")
+                {
+                    Console.WriteLine(String.Format("The value {0} devide by the value {0} is equal to {0}", firstNumber, secondNumber, result));
+                }  
             }
-            finally { }
-    }
+            catch (Exception ex) {
+                // Normally, we'd log this error to a file.
+                Console.WriteLine(ex.Message); }
+            
+        }
     }
 }
