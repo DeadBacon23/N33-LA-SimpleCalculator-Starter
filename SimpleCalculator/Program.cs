@@ -10,39 +10,45 @@ namespace SimpleCalculator
             try
             {
                 // Class to convert user input
-                InputConverter inputConverter = new InputConverter();
+                //InputConverter inputConverter = new InputConverter();
 
                 // Class to perform actual calculations
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
+                CalcUtilities calculatorEngine = new CalcUtilities();
 
 
-                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                double firstNumber = InputConverter.ConvertInputToNumeric(Console.ReadLine());
+                double secondNumber = InputConverter.ConvertInputToNumeric(Console.ReadLine());
                 string operation = Console.ReadLine();
-                double value;
-                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                double answer = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-                if () {
-                switch (operation) {
+                if (firstNumber.GetType() == typeof(double) && secondNumber.GetType() == typeof(double))
+                {
+                    switch (operation)
+                    {
 
-                    case "+": 
-                        Console.WriteLine(String.Format("The value {0:##} plus the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
-                        break;
+                        case "+":
+                            Console.WriteLine(String.Format("The value {0:##} plus the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            break;
 
-                    case "-":
-                        Console.WriteLine(String.Format("The value {0:##} plus the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
-                        break;
+                        case "-":
+                            Console.WriteLine(String.Format("The value {0:##} plus the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            break;
 
-                    case "*":
-                        Console.WriteLine(String.Format("The value {0:##} multiplied by the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
-                        break;
+                        case "*":
+                            Console.WriteLine(String.Format("The value {0:##} multiplied by the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            break;
 
-                    case "/":
-                        Console.WriteLine(String.Format("The value {0:##} devide by the value {0:##} is equal to {0:##}", firstNumber, secondNumber, result));
-                        break;
+                        case "/":
+                            Console.WriteLine(String.Format("The value {0:##} devide by the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            break;
 
-            }
+                        case "^":
+                            Console.WriteLine(String.Format("The value {0:##} to the power of {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            break;
 
+                    }
+
+                }
             }
             catch (Exception ex) {
                 // Normally, we'd log this error to a file.

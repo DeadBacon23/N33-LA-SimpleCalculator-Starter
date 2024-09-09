@@ -9,10 +9,33 @@ namespace CalcLibrary
 {
     public class CalcUtilities
     {
-        public static decimal add (decimal a, decimal b)
+        public double Calculate(string argOperation, double argFirstNumber, double argSecondNumber)
         {
-            return a + b;
-        }
+            double result = 0;
+            switch (argOperation)
+            {
 
+                case "+":
+                    result = argFirstNumber + argSecondNumber;
+                    break;
+
+                case "-":
+                    result = argFirstNumber - argSecondNumber;
+                    break;
+
+                case "*":
+                    result = argFirstNumber * argSecondNumber;
+                    break;
+
+                case "/":
+                    result = argFirstNumber / argSecondNumber;
+                    break;
+
+                case "^":
+                    result = Math.Pow(argFirstNumber, argSecondNumber);
+                    break;
+            }
+            return result;
+        }
     }
 }
