@@ -15,10 +15,21 @@ namespace SimpleCalculator
                 // Class to perform actual calculations
                 CalcUtilities calculatorEngine = new CalcUtilities();
 
+                Console.WriteLine("Enter a number, then an operation (+, -, *, /, ^), then a number to perform the operation \n");
 
-                double firstNumber = InputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = InputConverter.ConvertInputToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
+                Console.Write("number 1: ");
+                string first = Console.ReadLine();
+                double firstNumber = InputConverter.ConvertInputToNumeric(first);
+
+                Console.Write("operation: ");
+                string opInput = Console.ReadLine();
+                InputConverter.ConvertInputToNumeric(opInput, isOperator: true);
+                string operation = opInput;
+
+                Console.Write("number 2: ");
+                string second = Console.ReadLine();
+                double secondNumber = InputConverter.ConvertInputToNumeric(second);
+                
                 double answer = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
                 if (firstNumber.GetType() == typeof(double) && secondNumber.GetType() == typeof(double))
@@ -31,7 +42,7 @@ namespace SimpleCalculator
                             break;
 
                         case "-":
-                            Console.WriteLine(String.Format("The value {0:##} plus the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            Console.WriteLine(String.Format("The value {0:##} minus the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
                             break;
 
                         case "*":
@@ -39,7 +50,7 @@ namespace SimpleCalculator
                             break;
 
                         case "/":
-                            Console.WriteLine(String.Format("The value {0:##} devide by the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
+                            Console.WriteLine(String.Format("The value {0:##} divided by the value {1:##} is equal to {2:##}", firstNumber, secondNumber, answer));
                             break;
 
                         case "^":
